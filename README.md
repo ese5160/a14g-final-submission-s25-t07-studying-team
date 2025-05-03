@@ -1,11 +1,11 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/AlBFWSQg)
 # a14g-final-submission
 
-    * Team Number: 
-    * Team Name: 
-    * Team Members: 
-    * Github Repository URL: 
-    * Description of test hardware: (development boards, sensors, actuators, laptop + OS, etc) 
+    * Team Number: 07
+    * Team Name: Studying Team
+    * Team Members: Guanlin Li, Xinmi Wang
+    * Github Repository URL: https://github.com/ese5160/a14g-final-submission-s25-t07-studying-team
+    * Description of test hardware: 
 
 ## 1. Video Presentation
 
