@@ -23,7 +23,11 @@ The internet is an important part to our project, as the knob needs to send the 
 
 ### Device functionality
 
+The device is designed in a problem-solving based thinking. We have a lot of devices that could use a spinning knob to control in home. For example, we could use a knob to control the desired temperature, the volume of our sound bar, the fan speed, the brightness and temperature of the lamp, and a lot more, for example, switching devices on/off. The current smart home controller uses a spinning knob to control all of these, but there are no force-feedback, meaning sometimes user could accidentally spin over the desired numbers. With force-feedback, we could imitate the feeling of a mechanical knob, so when the user spins the knob, he/she could feel that the knob is currently in a level or at the limit, so they don't need to control their hand movement precisely to spin the knob to their desired value. 
 
+Based on this idea, we started designing our project. To achieve a force-feedback knob, we decided to put a motor and an encoder so that the motor could provide force-feedback, and the encoder should be able to tell the system where the motor has spun to. This gives a close-loop control on the motor. The LCD screen is also included to provide a visual feedback on what mode the user is currently in and what value did the user spin to. The LEDs are designed to provide a clear feedback of whether the user pressed the button or not. 
+
+This is our system-level block diagram.
 
 ### Challenges
 
