@@ -64,8 +64,91 @@ Altium link: [CLICK HERE](https://upenn-eselabs.365.altium.com/designs/2CB5A97B-
 
 ## 3. Hardware & Software Requirements
 
+### Hardware Requirements:
+
+#### HER01: The screen shall react to user's input on the knob and the pushbutton by displaying corresponding user interfaces.
+
+During testing, the LCD screen failed to respond to any knob or button inputs. Upon investigation, we found that the voltage output from the PCB board was approximately 2.3V by using a multimeter to test the voltage, which is significantly below the LCD screen’s required operating voltage (~3.3V to 5V). This insufficient voltage likely prevented the screen from powering up or functioning properly. We verified this by measuring the voltage at the screen's power supply pin using a multimeter.
+
+#### HRS02: The knob shall react to user's input on the knob by applying force on the knob via the brushless motor.
+
+
+The knob currently behaves like a virtual spring, offering force feedback when rotated and released. This confirms that basic motor control and force application are working. However, we have not yet implemented programmable dynamic force profiles or feedback modes, which limits the extent of haptic interaction. Validation was done by rotating the knob and observing the spring-like behavior restored by the motor.
+
+#### HRS03: The device shall be able to last for at least 2 hours with DC power disconnected.
+
+
+
+With the motors continuously powered, the system operates for approximately 1 hour and 30 minutes on battery. This falls short of the 2-hour target. We measured the run-time by fully charging the battery, disconnecting external power, and timing until the system could no longer function. Reducing motor activity or optimizing sleep modes may help reach the target in future iterations.
+
+
+#### HRS04: The LEDs shall react to user's input on the knob and the pushbutton.
+
+
+
+The LED system successfully responds to user inputs. For instance, pressing the knob changes the LED color, indicating that the system is receiving and processing input signals correctly. We validated this by pressing the button multiple times and observing corresponding LED color changes.
+
+
+#### HRS05: The magnetic encoder sensor shall be used to detect the angle which the knob has spun to within 5 degrees.
+
+Status: Met
+
+We validated the accuracy of the magnetic encoder by comparing its digital output to known angular displacements. The encoder outputs a 12-bit value ranging from 0 to 4095, corresponding to a full 360° rotation.
+
+![alt text](bd0e3897135b8163ee740c3ae225645.png)
+
+![alt text](02eb21cd2884bc6827638bf017210d6.jpg)
+
+![alt text](75b3e207c35902cf42c837a39729afd.png)
+
+
+
+In one test, we rotated the knob approximately 90 degrees. The initial reading was 4088, and the final reading was 1025. Accounting for rollover, the calculated angle was:((1025−0+1)+(4096−4088+1))/4096×360=90.97 ∘
+This is within 1 degree of the expected value.
+
+![alt text](63be7feb1aa776518ccbd5991f21b9f.png)
+
+![alt text](8e4453ff27ad649d6ce5094b5405ce0.jpg)
+
+![alt text](167d711f81c5dee777a77088f43f6bc.png)
+
+![alt text](d7b899f663013d7092306a2fedfe0d2.jpg)
+In another test, we rotated the knob approximately 180 degrees. The initial reading was 0, and the final reading was 2038. The calculated angle was:(2038−0+1)/4096×360=179.12∘
+ 
+Again, this is within 1 degree of the expected angle. These results confirm that the sensor reliably detects rotational angles with better than 5-degree accuracy.
+
+
+
+### Software requirements:
+
+
+#### SRS 01: The system will detect rotation and push inputs from the knob with high precision, using the magnetic encoder to update the state at least every 10 milliseconds.
+
+
+#### SRS 02: The software will control the LED output to change colors corresponding to different modes activated via the knob interface, using predefined color codes.
+
+
+#### SRS 03: Communication with other smart devices will utilize MQTT for sending and receiving commands over Wi-Fi.
+
+
+#### SRS 04: The LCD display will update user interface elements in real-time to reflect changes made through the knob, supporting dynamic updates without lag.
+
+
+
+
 ## 4. Project Photos & Screenshots
 
+![alt text](FLIR1000020.jpeg)
+
+![alt text](pt1-3.jpg)
+
+![alt text](image.png)
+
+![alt text](image-1.png)
+
+![alt text](image-2.png)
+
+![alt text](image-3.png)
 ## Codebase
 
 - A link to your final embedded C firmware codebases
