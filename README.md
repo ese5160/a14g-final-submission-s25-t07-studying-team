@@ -147,6 +147,9 @@ SDA signal line is found non-functional by observing the salae logic analyzer ou
 
 ![alt text](image-3.png)
 
+![alt text](final_block.png)
+
+
 
 ## Codebase
 
