@@ -29,6 +29,8 @@ Based on this idea, we started designing our project. To achieve a force-feedbac
 
 This is our system-level block diagram. 
 
+![alt text](final_block.png)
+
 ### Challenges
 
 There are all kinds of challenges that we faced. The first one is the driver for the LCD screen and the motor. Since our project is using C and there's no library for the motor and the LCD screen that writes in C, we have to make our own library. We checked different datasheets and examples and we finally figured out how to initialize and send data/commands the LCD screen. However, we were unable to fully control the motor at the end. We were also not sure where the motor went wrong, since our code matches the workflow of FOC control. Therefore, the spring-like motor will be the only mode we could demonstrate. We will work on this motor during the summer and hopefully we could figure out a way to control it. 
@@ -147,7 +149,6 @@ SDA signal line is found non-functional by observing the salae logic analyzer ou
 
 ![alt text](image-3.png)
 
-![alt text](final_block.png)
 
 
 
