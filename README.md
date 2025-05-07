@@ -68,7 +68,7 @@ Altium link: [CLICK HERE](https://upenn-eselabs.365.altium.com/designs/2CB5A97B-
 
 #### HER01: The screen shall react to user's input on the knob and the pushbutton by displaying corresponding user interfaces.
 
-During testing, the LCD screen failed to respond to any knob or button inputs. Upon investigation, we found that the voltage output from the PCB board was approximately 2.3V by using a multimeter to test the voltage, which is significantly below the LCD screen’s required operating voltage (~3.3V to 5V). This insufficient voltage likely prevented the screen from powering up or functioning properly. We verified this by measuring the voltage at the screen's power supply pin using a multimeter.
+This requirement was not fulfilled in the current implementation. Although the LCD was intended to display real-time feedback—specifically, showing the current angular position of the knob using a rotating pointer, no signal was detected on the SDA (MOSI) lines, indicating a failure in SPI communication with the display. Due to tight time constraints, we were unable to fully investigate the issue.  We suspect a hardware connection fault or a software SERCOM/pin mapping conflict. As a result, the LCD remained non-operational during the demo and will be revisited in future work.
 
 #### HRS02: The knob shall react to user's input on the knob by applying force on the knob via the brushless motor.
 
@@ -83,8 +83,6 @@ With the motors continuously powered, the system operates for approximately 1 ho
 
 
 #### HRS04: The LEDs shall react to user's input on the knob and the pushbutton.
-
-
 
 The LED system successfully responds to user inputs. For instance, pressing the knob changes the LED color, indicating that the system is receiving and processing input signals correctly. We validated this by pressing the button multiple times and observing corresponding LED color changes.
 
@@ -104,6 +102,7 @@ We validated the accuracy of the magnetic encoder by comparing its digital outpu
 
 
 In one test, we rotated the knob approximately 90 degrees. The initial reading was 4088, and the final reading was 1025. Accounting for rollover, the calculated angle was:((1025−0+1)+(4096−4088+1))/4096×360=90.97 ∘
+
 This is within 1 degree of the expected value.
 
 ![alt text](63be7feb1aa776518ccbd5991f21b9f.png)
@@ -113,6 +112,7 @@ This is within 1 degree of the expected value.
 ![alt text](167d711f81c5dee777a77088f43f6bc.png)
 
 ![alt text](d7b899f663013d7092306a2fedfe0d2.jpg)
+
 In another test, we rotated the knob approximately 180 degrees. The initial reading was 0, and the final reading was 2038. The calculated angle was:(2038−0+1)/4096×360=179.12∘
  
 Again, this is within 1 degree of the expected angle. These results confirm that the sensor reliably detects rotational angles with better than 5-degree accuracy.
@@ -124,16 +124,26 @@ Again, this is within 1 degree of the expected angle. These results confirm that
 
 #### SRS 01: The system will detect rotation and push inputs from the knob with high precision, using the magnetic encoder to update the state at least every 10 milliseconds.
 
+The system reads encoder data at a rate 1 ms using a FreeRTOS task with a consistent polling interval. Real-time debugging logs confirmed that encoder values were updated every 1 milliseconds, depending on system load. Both rotation and pushbutton inputs are successfully detected and debounced, ensuring precise interaction tracking.
+
 
 #### SRS 02: The software will control the LED output to change colors corresponding to different modes activated via the knob interface, using predefined color codes.
+
+Initially, the plan was to assign specific LED colors to indicate different control modes. However, due to time constraints and the shift in design, the system now relies on feedback to determine LED behavior. The LED responds when the knob is pressed, reflecting button status rather than control mode. This is considered a minor requirement and was partially implemented in the final prototype.
+
 
 
 #### SRS 03: Communication with other smart devices will utilize MQTT for sending and receiving commands over Wi-Fi.
 
 
+Although we originally intended to control external smart devices (e.g., thermostat, lamps lignting, volume control) via MQTT, time constraints prevented full implementation. Instead, the system focuses on reliably publishing angular position and button status to Node-RED using the MQTT protocol. No actual devices are controlled in this version, but the data pipeline is functional and ready for extension.
+
 #### SRS 04: The LCD display will update user interface elements in real-time to reflect changes made through the knob, supporting dynamic updates without lag.
 
 
+SDA signal line is found non-functional by observing the salae logic analyzer output. possibly due to routing or pin assignment failure on the board.
+
+SRAM limitations: The Wi-Fi module unexpectedly required a heap size of over 1000 bytes, leaving insufficient memory for the LCD driver. As a result, the display was deprioritized in favor of ensuring system stability under Wi-Fi communication. LCD functionality remains a future integration goal once the memory allocation is optimized.
 
 
 ## 4. Project Photos & Screenshots
@@ -149,6 +159,8 @@ Again, this is within 1 degree of the expected angle. These results confirm that
 ![alt text](image-2.png)
 
 ![alt text](image-3.png)
+
+
 ## Codebase
 
 - A link to your final embedded C firmware codebases
