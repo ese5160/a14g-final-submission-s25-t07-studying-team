@@ -170,7 +170,7 @@ Encapsulated smart knob in a room environment:
 ![alt text](9baf5492df22d7be49b3453d7e7a052.jpg)
 
 
-Disassembled smart knob:
+Disassembled smart knob showing internal components:
 
 ![alt text](469145a53b1bbb0de8baa1a4cfce146.jpg)
 
