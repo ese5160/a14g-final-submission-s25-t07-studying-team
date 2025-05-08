@@ -176,7 +176,6 @@ The Altium Board design in 3D view
 
 ## Codebase
 
-- A link to your final embedded C firmware codebases
-- A link to your Node-RED dashboard code
-- Links to any other software required for the functionality of your device
+Node-Red link: [CLICK HERE](http://172.178.40.121:1880/#flow/9ecac7261ee87947)
 
+Firmware link: [CLICK HERE](https://github.com/ese5160/final-project-t07-studying-team)
