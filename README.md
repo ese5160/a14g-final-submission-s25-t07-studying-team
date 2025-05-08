@@ -9,7 +9,10 @@
 
 ## 1. Video Presentation
 
-<iframe src="https://www.youtube.com/embed/FkS4sQEOVI0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen> </iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/FkS4sQEOVI0" frameborder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen></iframe>
+
 
 
 Or you can check the video [HERE](https://drive.google.com/file/d/1UU-8aRGXkOOEAa9cYBTTbaUJIwjn4cNM/view?usp=sharing). 
