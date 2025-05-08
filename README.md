@@ -55,7 +55,7 @@ We learned alot when assembling our prototype and testing it. For example, we le
 
 Also, we should test everything on the dev board before making the PCB. The course is kind of rush so we have no time to validate our idea, therefore, we were not able to accomplish our target and there are mistakes discovered later that could be prevented if we validate it beforehand. 
 
-If we can start it over again, we would probably first validate the motor to see if it could work. We spend excessive time on the motor driver but were unable to bring a satisfying driver at the end. Also, we would prevent the use of SERCOM2 for the LED signal pin by changing the pin to other pin that uses SERCOM1 for example. Also, we would move the LCD screen's connector closer to the MCU so that it won't be interfered by other noisy signals. We also connect the wrong pin for the LCD screen (MOSI and SCLK on the wrong pad of SERCOM20). We would also adjust this one if possible. 
+If we can start it over again, we would probably first validate the motor to see if it could work. We spend excessive time on the motor driver but were unable to bring a satisfying driver at the end. Also, we would prevent the use of SERCOM2 for the LED signal pin by changing the pin to other pin that uses SERCOM1 for example. Also, we would move the LCD screen's connector closer to the MCU so that it won't be interfered by other noisy signals. We also connect the wrong pin for the LCD screen (MOSI and SCLK on the wrong pad of SERCOM2). We would also adjust this one if possible. 
 
 ### Next steps & Takeaways
 
