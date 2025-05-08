@@ -9,6 +9,10 @@
 
 ## 1. Video Presentation
 
+<video controls src="https://youtu.be/FkS4sQEOVI0" title="Title"></video>
+
+Or you can check the video [HERE](https://drive.google.com/file/d/1UU-8aRGXkOOEAa9cYBTTbaUJIwjn4cNM/view?usp=sharing). 
+
 ## 2. Project Summary
 
 ### Device description
