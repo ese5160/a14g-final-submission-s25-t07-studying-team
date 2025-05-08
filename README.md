@@ -199,7 +199,7 @@ The Altium Board design in 3D view
 
 ![alt text](image-3.png)
 
-Block diagram of your system:
+Block diagram of the system:
 
 ![alt text](final_block-1.png)
 
