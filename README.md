@@ -7,6 +7,8 @@
     * Github Repository URL: https://github.com/ese5160/a14g-final-submission-s25-t07-studying-team
     * Description of test hardware: Laptop
 
+*GitHub Pages Link:* https://ese5160.github.io/a14g-final-submission-s25-t07-studying-team/
+
 ## 1. Video Presentation
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/FkS4sQEOVI0" frameborder="0"
