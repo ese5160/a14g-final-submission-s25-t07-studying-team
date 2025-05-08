@@ -145,22 +145,44 @@ SDA signal line is found non-functional by observing the salae logic analyzer ou
 
 ## 4. Project Photos & Screenshots
 
-![alt text](front.jpg)
-
-![alt text](back.jpg)
+Thermal camera images while the board is running under load
 
 ![alt text](FLIR1000020.jpeg)
 
+
+stand alone PCB top:
+
+![alt text](1515a0de1a874954def3ad7d4683e69.jpg)
+
+The standalone PCBA, bottom:
+
+![alt text](7b0c037738799e881eab45e12b11dbb.jpg)
+
+
+Node-RED backend
+
+![alt text](image.png)
+
+
+Node-RED dashboard
+
+![alt text](image-1.png)
+
+
+The Altium Board design in 2D view
+
 ![alt text](image-2.png)
+
+
+The Altium Board design in 3D view
 
 ![alt text](image-3.png)
 
 ![alt text](image.png)
 
-![alt text](image-1.png)
+Block diagram of your system:
 
-![alt text](final_block.png)
-
+![alt text](final_block-1.png)
 
 ## Codebase
 
