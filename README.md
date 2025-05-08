@@ -169,6 +169,11 @@ Encapsulated smart knob in a room environment:
 
 ![alt text](9baf5492df22d7be49b3453d7e7a052.jpg)
 
+![alt text](CAD-1.png)
+
+![alt text](CAD-2.png)
+
+![alt text](CAD-3.png)
 
 Disassembled smart knob showing internal components:
 
