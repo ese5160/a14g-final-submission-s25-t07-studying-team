@@ -145,19 +145,21 @@ SDA signal line is found non-functional by observing the salae logic analyzer ou
 
 ## 4. Project Photos & Screenshots
 
+![alt text](front.jpg)
+
+![alt text](back.jpg)
+
 ![alt text](FLIR1000020.jpeg)
-
-![alt text](pt1-3.jpg)
-
-![alt text](image.png)
-
-![alt text](image-1.png)
 
 ![alt text](image-2.png)
 
 ![alt text](image-3.png)
 
+![alt text](image.png)
 
+![alt text](image-1.png)
+
+![alt text](final_block.png)
 
 
 ## Codebase
