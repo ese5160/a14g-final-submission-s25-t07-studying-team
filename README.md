@@ -147,13 +147,27 @@ SDA signal line is found non-functional by observing the salae logic analyzer ou
 
 ![alt text](FLIR1000020.jpeg)
 
+
+stand alone PCB top:
+
 ![alt text](pt1-3.jpg)
+
+
 
 ![alt text](image.png)
 
+
+Node-RED dashboard
+
 ![alt text](image-1.png)
 
+
+The Altium Board design in 2D view
+
 ![alt text](image-2.png)
+
+
+The Altium Board design in 3D view
 
 ![alt text](image-3.png)
 
