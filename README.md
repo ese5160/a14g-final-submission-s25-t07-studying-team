@@ -192,3 +192,5 @@ Block diagram of your system:
 Node-Red link: [CLICK HERE](http://172.178.40.121:1880/#flow/9ecac7261ee87947)
 
 Firmware link: [CLICK HERE](https://github.com/ese5160/final-project-t07-studying-team)
+
+Please note that the motor/WiFi firmware is at two different commit. If you want to check the working code for the motor, please use `git checkout 006a4666271c475b1596f2f8063cf1c2895ce249`. If you want to check the working code for OTAFU and Node-Red communication, please use `git checkout main`. 
