@@ -78,23 +78,31 @@ Altium link: [CLICK HERE](https://upenn-eselabs.365.altium.com/designs/2CB5A97B-
 
 #### HER01: The screen shall react to user's input on the knob and the pushbutton by displaying corresponding user interfaces.
 
+Status: Failed
+
 This requirement was not fulfilled in the current implementation. Although the LCD was intended to display real-time feedback — specifically, showing the current angular position of the knob using a rotating pointer and the current mode it is in, no signal was detected on the SDA (MOSI) lines, indicating a failure in SPI communication with the display. Due to tight time constraints, we were unable to fully investigate the issue. We suspect a hardware connection fault or a software SERCOM/pin mapping conflict. As a result, the LCD remained non-operational during the demo and will be revisited in future work. 
 
 #### HRS02: The knob shall react to user's input on the knob by applying force on the knob via the brushless motor.
+
+Status: Passed
 
 The knob currently behaves like a virtual spring, offering force feedback when rotated and released. This confirms that basic motor control and force application are working. However, we have not yet implemented programmable dynamic force profiles or feedback modes, which limits the extent of haptic interaction. Validation was done by rotating the knob and observing the spring-like behavior restored by the motor. The motor will always rotate back to the preset position no matter what direction it is spun to. 
 
 #### HRS03: The device shall be able to last for at least 2 hours with DC power disconnected.
 
+Status: Failed
+
 With the motors continuously powered, the system operates for approximately 1 hour and 30 minutes on battery. This falls short of the 2-hour target. We measured the run-time by fully charging the battery, disconnecting external power, and timing until the motor could no longer be powered by the driver effectively. Reducing motor activity or optimizing sleep modes may help reach the target in future iterations. 
 
 #### HRS04: The LEDs shall react to user's input on the knob and the pushbutton.
+
+Status: Passed
 
 The LED system successfully responds to user inputs. For instance, pressing the knob changes the LED color, indicating that the system is receiving and processing input signals correctly. We validated this by pressing the button multiple times and observing corresponding LED color changes. We could expand the color of the LED corresponding to different modes in future works. 
 
 #### HRS05: The magnetic encoder sensor shall be used to detect the angle which the knob has spun to within 5 degrees.
 
-Status: Met
+Status: Passed
 
 We validated the accuracy of the magnetic encoder by comparing its digital output to known angular displacements. The encoder outputs a 12-bit value ranging from 0 to 4095, corresponding to a full 360° rotation.
 
@@ -129,17 +137,25 @@ Again, this is within 1 degree of the expected angle. These results confirm that
 
 #### SRS 01: The system will detect rotation and push inputs from the knob with high precision, using the magnetic encoder to update the state at least every 10 milliseconds.
 
+Status: Passed
+
 The system reads encoder data at 1k Hz using a FreeRTOS task. Real-time debugging logs confirmed that encoder values were updated every 1 milliseconds, depending on system load. Both rotation and pushbutton inputs are successfully detected and debounced, ensuring precise interaction tracking. 
 
 #### SRS 02: The software will control the LED output to change colors corresponding to different modes activated via the knob interface, using predefined color codes.
+
+Status: Target changed, passed
 
 Initially, the plan was to assign specific LED colors to indicate different control modes. However, due to time constraints and the shift in design, the system now relies on feedback to determine LED behavior. The LED responds when the knob is pressed, reflecting button status rather than control mode. This is considered a minor requirement and was partially implemented in the final prototype. This could also be easily adjusted as the driver for the LEDs are already implemented and a function call with the desired color as parameter could adjust the color. 
 
 #### SRS 03: Communication with other smart devices will utilize MQTT for sending and receiving commands over Wi-Fi.
 
+Status: Passed
+
 Although we originally intended to control external smart devices (e.g., thermostat, lamps lignting, volume control) via MQTT as the final demonstration, time constraints prevented full implementation. Instead, the system focuses on reliably publishing angular position and button status to Node-RED using the MQTT protocol. No actual devices are controlled in this version, but the data pipeline is functional and ready for extension. The devices could simply subscribe to the topic on the MQTT broker and would be able to acquire full information of the knob. 
 
 #### SRS 04: The LCD display will update user interface elements in real-time to reflect changes made through the knob, supporting dynamic updates without lag.
+
+Status: Failed
 
 SDA signal line is found non-functional by observing the salae logic analyzer output. possibly due to routing or pin assignment failure on the board. However, the driver for the LCD screen and the task for the LCD screen is implemented. The LCD could be brought back online easily once the real problem is pinpointed in the future. 
 
