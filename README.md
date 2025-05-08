@@ -145,6 +145,11 @@ SDA signal line is found non-functional by observing the salae logic analyzer ou
 
 ## 4. Project Photos & Screenshots
 
+![alt text](47d4560e368413e0acd40f596884dcd.jpg)
+
+![alt text](9baf5492df22d7be49b3453d7e7a052.jpg)
+
+
 Thermal camera images while the board is running under load
 
 ![alt text](FLIR1000020.jpeg)
