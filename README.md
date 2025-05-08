@@ -163,6 +163,8 @@ SDA signal line is found non-functional by observing the salae logic analyzer ou
 
 ## 4. Project Photos & Screenshots
 
+Encapsulated smart knob in a room environment:
+
 ![alt text](47d4560e368413e0acd40f596884dcd.jpg)
 
 ![alt text](9baf5492df22d7be49b3453d7e7a052.jpg)
